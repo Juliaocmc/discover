@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     border: none;
-    text-decoration: nome;
+    text-decoration: none;
     box-sizing: border-box;
 }
 
@@ -25,6 +25,7 @@ html{
  }
 
  body{
+    display: flex;
     height: 100vh; /*Ocupar a tela toda na vertical, para width vw*/
     background-color: var(--background);
 }
@@ -92,10 +93,7 @@ button.outline,
 
 }
 
-input, button, .button{
-    width: 100%;
-    margin-bottom: 1.8rem;
-}
+
 
 .content header{
     width: 80%;

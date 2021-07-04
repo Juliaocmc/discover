@@ -20,9 +20,20 @@ deleteButton.forEach(button => {
 });
 
 function handleClick(event, check = true) {
+    event.preventDefault();
+
+    const slug = check ? "check" : "delete"
+
+    const roomId = document.querySelector("#room-id").dataset.id;
+
+    const dataId = event.target.dataset.id;
+
+    const form = document.querySelector('.modal form');
+    form.setAttribute("action", `/question/${roomId}/${dataId}/${slug}`)
+
     modalTitle.innerHTML = check ? 'Marcar como lida' : 'Excluir esta pergunta'
-
+    modalDescription.innerHTML = check ? "Tem certeza que deseja marcar como lida?" : "Tem certeza que deseja excluir esta pergunta?"
+    modalButton.innerHTML = check ? "sim, marcar" : "sim, excluir"
     modal.open()
+    check ? modalButton.classList.remove("red") : modalButton.classList.add("red")
 };
-
-/* 1:40:29 */

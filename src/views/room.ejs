@@ -57,71 +57,58 @@
             <section id="questions">
                 <h2 class="sr-only">Perguntas da comunidade</h2>
                 <div class="questions">
-                    <div class="question-wrapper">
-                        <div class="questions-content">
-                            <div class="user">
-                                <img src="/img/user.svg" alt="Avatar" srcset="">
-                            </div>
-                            <div class="questions">
-                                <p>Qual a diferença?</p>
 
-                            </div>
-                        </div>
-                        <div class="action">
-                            <a href="#" class="check" data-id="2">
-                                <img src="/img/check.svg" alt="Marcar como lida" srcset="">
-                                Marcar como lida
-                            </a>
-                            <a href="#" class="delete" data-id="2">
-                                <img src="/img/trash.svg" alt="Excluir" srcset="">
-                                Excluir
-                            </a>
+                    <% questions.forEach(question=> { %>
+                        <div class="question-wrapper">
+                            <div class="questions-content">
+                                <div class="user">
+                                    <img src="/img/user.svg" alt="Avatar" srcset="">
+                                </div>
+                                <div class="question">
+                                    <p>
+                                        <%= question.title %>
+                                    </p>
 
-                        </div>
-                    </div>
-
-                    <div class="question-wrapper">
-                        <div class="questions-content">
-                            <div class="user">
-                                <img src="/img/user.svg" alt="Avatar" srcset="">
+                                </div>
                             </div>
-                            <div class="questions">
-                                <p>O que é JavaScript?</p>
+                            <div class="action">
+                                <a href="#" class="check" data-id="<%= question.id %>">
+                                    <img src="/img/check.svg" alt="Marcar como lida" srcset="">
+                                    Marcar como lida
+                                </a>
+                                <a href="#" class="delete" data-id="<%= question.id %>">
+                                    <img src="/img/trash.svg" alt="Excluir" srcset="">
+                                    Excluir
+                                </a>
 
                             </div>
                         </div>
-                        <div class="action">
-                            <a href="#" class="check" data-id="3">
-                                <img src="/img/check.svg" alt="Marcar como lida" srcset="">
-                                Marcar como lida
-                            </a>
-                            <a href="#" class="delete" data-id="3">
-                                <img src="/img/trash.svg" alt="Excluir" srcset="">
-                                Excluir
-                            </a>
-
-                        </div>
-                    </div>
-
-                    <div class="question-wrapper read">
-                        <div class="questions-content">
-                            <div class="user">
-                                <img src="/img/user.svg" alt="Avatar" srcset="">
-                            </div>
-                            <div class="questions">
-                                <p>O que é TypeScript?</p>
-
-                            </div>
-                        </div>
-                        <div class="action">
-                            <a href="#" class="check" data-id="1">
-                                <img src="/img/check.svg" alt="Marcar como lida">
-                                Pergunta lida
-                            </a>
 
 
-                        </div>
-                    </div>
+                        <% }); %>
+
+                            <% questionsReads.forEach(questionRead=> { %>
+
+                                <div class="question-wrapper read">
+                                    <div class="questions-content">
+                                        <div class="user">
+                                            <img src="/img/user.svg" alt="Avatar" srcset="">
+                                        </div>
+                                        <div class="question">
+                                            <p>
+                                                <%= questionRead.title %>
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                    <div class="action">
+                                        <a href="#" class="check" data-id="<%= questionRead.id %> ">
+                                            <img src="/img/check.svg" alt="Marcar como lida">
+                                            Pergunta lida
+                                        </a>
+                                    </div>
+                                </div>
+                                <% }); %>
 
                 </div>
 
